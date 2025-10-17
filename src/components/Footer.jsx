@@ -285,7 +285,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-4">
               <p className="text-gray-400 text-sm text-center md:text-left">
-                © 2024 VARISS.IN. All rights reserved.
+                © 2025 VARISS.IN. All rights reserved.
               </p>
               <span className="hidden md:inline text-gray-600">•</span>
               <span className="text-sm text-gray-400 flex items-center space-x-1">
