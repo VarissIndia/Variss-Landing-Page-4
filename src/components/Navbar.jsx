@@ -273,6 +273,7 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setShowLoginModal(true)}
+                    id="showLoginModalButton"
                     className="hidden sm:flex relative px-5 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-sm items-center justify-center gap-2 group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 duration-200"
                   >
                     <span>Get Started Free</span>
@@ -389,6 +390,7 @@ const Navbar = () => {
                         setShowLoginModal(true);
                         setIsMobileMenuOpen(false);
                       }}
+                      id="showLoginModalButton"
                       className="w-full px-5 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
                     >
                       <span>Get Started Free</span>

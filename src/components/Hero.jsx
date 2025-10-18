@@ -213,6 +213,7 @@ const Hero = () => {
                 onClick={() => {
                         setShowLoginModal(true);
                       }}
+                id="showLoginModalButton"
                 className="relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-base sm:text-lg flex items-center justify-center gap-2 group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all cursor-pointer"
               >
                 <span>Get Started Free</span>
@@ -231,6 +232,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                id='feedbackButton'
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full font-semibold text-white text-base sm:text-lg flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/30 transition-all cursor-pointer"
               >
                 <MessageSquare className="w-5 h-5" />

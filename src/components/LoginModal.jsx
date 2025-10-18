@@ -229,6 +229,7 @@ const LoginModal = ({ isOpen, onClose }) => {
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handleGoogleLogin}
+                    id='googleLoginButton'
                     disabled={isLoading}
                     className="w-full relative overflow-hidden group"
                   >

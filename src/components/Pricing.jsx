@@ -248,6 +248,7 @@ const Pricing = () => {
                onClick={() => {
                         setShowLoginModal(true);
                       }}
+              id="showLoginModalButton"
               whileHover={{ 
                 scale: 1.03,
                 rotateY: 3,
