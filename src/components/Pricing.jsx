@@ -52,7 +52,7 @@ const Pricing = () => {
         { text: 'Basic Security Features', icon: Shield },
         { text: 'Email Support', icon: Mail }
       ],
-      cta: 'Start Free'
+      cta: 'Try Now'
     },
     {
       id: 'pro',
@@ -75,8 +75,8 @@ const Pricing = () => {
         { text: 'Advanced Security Features', icon: Shield },
         { text: 'Document Upload Support', icon: FileText }
       ],
-      cta: 'Get Started',
-      badge: 'SAVE 60%'
+      cta: 'Try Now',
+      badge: 'Recommended'
     },
     {
       id: 'premium',
@@ -100,8 +100,8 @@ const Pricing = () => {
         { text: 'Document Upload & Storage', icon: FileText },
         { text: 'Annual Review Calls', icon: Calendar }
       ],
-      cta: 'Get Premium',
-      badge: 'SAVE 67%'
+      cta: 'Try Now'
+      // badge: 'SAVE 67%'
     }
   ]
 

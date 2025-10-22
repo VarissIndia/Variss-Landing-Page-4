@@ -13,8 +13,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import HeroImage from "../images/hero-image.webp";
-const LoginModal = React.lazy(() => import('./LoginModal'));
-
+const LoginModal = React.lazy(() => import("./LoginModal"));
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -23,11 +22,11 @@ const Hero = () => {
   });
 
   const [activeFeature, setActiveFeature] = useState(0);
-  
+
   // Mouse tracking for 3D effect
   // const mouseX = useMotionValue(0);
   // const mouseY = useMotionValue(0);
-  
+
   // const rotateX = useSpring(useTransform(mouseY, [-300, 300], [10, -10]));
   // const rotateY = useSpring(useTransform(mouseX, [-300, 300], [-10, 10]));
 
@@ -58,10 +57,22 @@ const Hero = () => {
 
   // Feature highlights for carousel
   const features = [
-    { icon: FileCheck, title: "Organized Records", color: "from-blue-500 to-purple-500" },
+    {
+      icon: FileCheck,
+      title: "Organized Records",
+      color: "from-blue-500 to-purple-500",
+    },
     { icon: Clock, title: "Auto Updates", color: "from-green-500 to-teal-500" },
-    { icon: HeartHandshake, title: "Nominee Access", color: "from-orange-500 to-red-500" },
-    { icon: Shield, title: "Secure Vault", color: "from-yellow-500 to-orange-500" },
+    {
+      icon: HeartHandshake,
+      title: "Nominee Access",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: Shield,
+      title: "Secure Vault",
+      color: "from-yellow-500 to-orange-500",
+    },
   ];
 
   useEffect(() => {
@@ -81,7 +92,10 @@ const Hero = () => {
   }));
 
   return (
-    <section id='home' className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-blue-900 via-blue-900 to-slate-900">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-blue-900 via-blue-900 to-slate-900"
+    >
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
@@ -129,7 +143,10 @@ const Hero = () => {
         />
       </div>
 
-      <div ref={ref} className="container mx-auto relative z-10 hero-3d-container">
+      <div
+        ref={ref}
+        className="container mx-auto relative z-10 hero-3d-container"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - Enhanced Text Content */}
           <div className="text-left space-y-6">
@@ -152,14 +169,16 @@ const Hero = () => {
                   VARISS.IN
                 </motion.span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white"
               >
-                Your <span className="text-cyan-400">Legacy,</span> Secured and Simplified
+                {/* Your <span className="text-cyan-400">Legacy,</span> Secured and Simplified */}
+                Organize and <span className="text-cyan-400">Protect</span> Your
+                Family’s Financial Future
               </motion.p>
             </motion.div>
 
@@ -170,8 +189,9 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-2xl"
             >
-             Variss is a secure platform to organize all your financial accounts in one place.
-             Stay updated with ease and give your loved ones smooth access when it matters most.
+              <span className="text-cyan-400"> Variss </span> helps you securely
+              store, update, and share your financial details with loved ones —
+              ensuring nothing is lost and your legacy is always protected.
             </motion.p>
 
             {/* Animated Stats Bar */}
@@ -179,7 +199,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-wrap gap-4 sm:gap-6 py-4"
+              className="flex flex-wrap gap-4 sm:gap-6 py-2"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -205,16 +225,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-4 mb-2"
             >
               <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                        setShowLoginModal(true);
-                      }}
-                id="showLoginModalButton"
-                className="relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-base sm:text-lg flex items-center justify-center gap-2 group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all cursor-pointer"
+                  setShowLoginModal(true);
+                }}
+                // id=""
+                className="showLoginModalButton relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-base sm:text-lg flex items-center justify-center gap-2 group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all cursor-pointer"
               >
                 <span>Get Started Free</span>
                 <Sparkles className="w-4 h-4 animate-pulse" />
@@ -232,13 +252,23 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                id='feedbackButton'
+                id="feedbackButton"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full font-semibold text-white text-base sm:text-lg flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/30 transition-all cursor-pointer"
               >
                 <MessageSquare className="w-5 h-5" />
                 <span>Give Feedback</span>
               </motion.a>
             </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="my-0 text-xs text-gray-400 pl-2"
+            >
+              No credit card required. Cancel anytime.
+            </motion.p>
 
             {/* Feature Carousel */}
             <motion.div
@@ -265,8 +295,8 @@ const Hero = () => {
                 <p className="text-sm text-gray-300">
                   <span className="font-semibold text-white">
                     {features[activeFeature].title}
-                  </span>
-                  {" "}and more...
+                  </span>{" "}
+                  and more...
                 </p>
               </div>
             </motion.div>
@@ -287,68 +317,68 @@ const Hero = () => {
               }}
               className="relative"
             > */}
-              {/* Floating Elements Around Image */}
+            {/* Floating Elements Around Image */}
+            <motion.div
+              animate={{
+                y: [0, -20, 0],
+                rotate: [0, 360],
+              }}
+              transition={{ duration: 10, repeat: Infinity }}
+              className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-20 blur-xl"
+            />
+            <motion.div
+              animate={{
+                y: [0, 20, 0],
+                rotate: [0, -360],
+              }}
+              transition={{ duration: 12, repeat: Infinity }}
+              className="absolute -bottom-10 -right-10 w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-20 blur-xl"
+            />
+
+            {/* Main Image Container */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
               <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent z-10"
                 animate={{
-                  y: [0, -20, 0],
-                  rotate: [0, 360],
+                  opacity: [0.5, 0.8, 0.5],
                 }}
-                transition={{ duration: 10, repeat: Infinity }}
-                className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-20 blur-xl"
+                transition={{ duration: 3, repeat: Infinity }}
               />
-              <motion.div
-                animate={{
-                  y: [0, 20, 0],
-                  rotate: [0, -360],
-                }}
-                transition={{ duration: 12, repeat: Infinity }}
-                className="absolute -bottom-10 -right-10 w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-20 blur-xl"
+              <img
+                src={HeroImage}
+                alt="Variss Platform"
+                width="800"
+                height="600"
+                loading="eager"
+                className="w-full h-auto object-cover transform transition-transform duration-300 hover:scale-105"
               />
+            </div>
 
-              {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent z-10"
-                  animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-                <img
-                  src={HeroImage}
-                  alt="Variss Platform"
-                  width="800"
-                  height="600"
-                  loading="eager"
-                  className="w-full h-auto object-cover transform transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-
-              {/* Floating Feature Cards */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  x: [0, -5, 0],
-                }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -right-4 top-20 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
-              >
-                <Lock className="w-6 h-6 text-blue-400 mb-1" />
-                <p className="text-xs text-white font-semibold">Encrypted</p>
-              </motion.div>
-
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                  x: [0, 5, 0],
-                }}
-                transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -left-4 bottom-32 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
-              >
-                <HeartHandshake className="w-6 h-6 text-green-400 mb-1" />
-                <p className="text-xs text-white font-semibold">Family First</p>
-              </motion.div>
+            {/* Floating Feature Cards */}
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+                x: [0, -5, 0],
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="absolute -right-4 top-20 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+            >
+              <Lock className="w-6 h-6 text-blue-400 mb-1" />
+              <p className="text-xs text-white font-semibold">Encrypted</p>
             </motion.div>
+
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+                x: [0, 5, 0],
+              }}
+              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute -left-4 bottom-32 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+            >
+              <HeartHandshake className="w-6 h-6 text-green-400 mb-1" />
+              <p className="text-xs text-white font-semibold">Family First</p>
+            </motion.div>
+          </motion.div>
           {/* </motion.div> */}
 
           {/* Mobile/Tablet Image View */}

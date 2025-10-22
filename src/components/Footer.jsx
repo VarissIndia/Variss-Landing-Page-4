@@ -243,7 +243,7 @@ const Footer = () => {
                   Stay Updated
                 </span>
               </h3>
-              <p className="text-gray-400 text-sm">Get updates on new features and financial legacy tips</p>
+              <p className="text-gray-400 text-sm">Stay financially prepared — get legacy planning tips & security updates monthly</p>
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               <input

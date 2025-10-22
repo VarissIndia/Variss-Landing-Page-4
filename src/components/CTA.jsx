@@ -223,8 +223,9 @@ const CTA = () => {
                       }}
                   className="relative px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold text-white text-lg flex items-center justify-center space-x-2 group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all cursor-pointer"
                 >
-                  <span>Start Your Free Trial</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span>Get Started Free</span>
+                  <Sparkles className="w-4 h-4 animate-pulse" />
+                  {/* <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /> */}
                   <motion.div
                     className="absolute inset-0 rounded-full bg-white"
                     initial={{ scale: 0, opacity: 0 }}
