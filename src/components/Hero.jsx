@@ -349,7 +349,8 @@ const Hero = () => {
                 alt="Variss Platform"
                 width="800"
                 height="600"
-                loading="eager"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover transform transition-transform duration-300 hover:scale-105"
               />
             </div>

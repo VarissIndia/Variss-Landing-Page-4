@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { ArrowRight, Sparkles, Shield, Clock, HeartHandshake, FileCheck } from 'lucide-react'
@@ -36,13 +36,15 @@ const CTA = () => {
   // }, [mouseX, mouseY]);
 
   // Floating particles
-  const particles = Array.from({ length: 15 }, (_, i) => ({
+  const particles = useMemo(() => {
+    return Array.from({ length: 15 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
     size: Math.random() * 3 + 1,
     duration: Math.random() * 15 + 15,
   }));
+  }, []);
 
   const features = [
     { icon: Shield, text: "Bank-Level Security" },

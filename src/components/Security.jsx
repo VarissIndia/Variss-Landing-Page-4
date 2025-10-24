@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect ,useMemo} from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
@@ -82,13 +82,15 @@ const Security = () => {
   ]
 
   // Animated particles
-  const particles = Array.from({ length: 25 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    duration: Math.random() * 20 + 15,
-  }))
+    const particles = useMemo(() => {
+      return Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      duration: Math.random() * 15 + 15,
+    }));
+    }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -24,7 +24,8 @@ const LoginModal = ({ isOpen, onClose }) => {
 
       // For demo - save to sessionStorage
       sessionStorage.setItem("trialUser", JSON.stringify(userData));
-      console.log("User saved:", userData);
+      // console.log("User saved:", userData);
+      window.dispatchEvent(new Event('trialUserUpdate'));
     } catch (error) {
       console.error("Error saving user:", error);
       throw error;

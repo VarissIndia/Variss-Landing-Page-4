@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from '../components/Navbar';
-import Hero from "../components/Hero";
+const Navbar= React.lazy(() => import('../components/Navbar'));
+const Hero= React.lazy(() => import("../components/Hero"));
 
 const Features = React.lazy(() => import("../components/Features"));
 const Security = React.lazy(() => import("../components/Security"));
